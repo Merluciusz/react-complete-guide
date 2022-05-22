@@ -1,9 +1,8 @@
-import logo from "./logo.svg";
-import "./App.css";
-
-// App is our first component
-import Expenses from "./components/Expenses/Expenses";
 import React from "react";
+import "./App.css";
+import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
+
 
 const App = () => {
   const expenses = [
@@ -29,23 +28,25 @@ const App = () => {
   ];
 
   //first alternative 
-  return  React.createElement(
-    'div',
-     {}, 
-  React.createElement('h2', {}, "Let`s get started!"),
-  React.createElement(Expenses, {items: expenses},)
-  );
+
+  // return  React.createElement(
+  //   'div',
+  //    {}, 
+  // React.createElement('h2', {}, "Let`s get started!"),
+  // React.createElement(Expenses, {items: expenses},)
+  // );
 
   // 5/20/2022 start working from home  
 
   // second alternative 
-  // (
-  //   <div>
-  //     <h2>Let`s get started</h2>
-  //       <Expenses items={expenses} />
 
-  //   </div>
-  // );
+ return (
+    <div>
+        <NewExpense />
+        <Expenses items={expenses} />
+
+    </div>
+  );
 }
 
 export default App;
